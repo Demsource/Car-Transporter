@@ -1,125 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 input {
-    border: 0;
+  border: none;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+}
 
 :root {
+  --primary-font: "Plus Jakarta Sans", sans-serif;
 
-    --primary-font: "Plus Jakarta Sans", sans-serif;
+  --primary-font-size: 16px;
+  --secondary-font-size: 14px;
+  --primary-headings-size: 24px;
+  --secondary-headings-size: 32px;
 
-    --primary-font-size: 16px;
-    --secondary-font-size: 14px;
-    --primary-headings-size: 24px;
-    --secondary-headings-size: 32px;
+  --primary-color: #1a202c;
+  --primary-color-500: #3563e9;
+  --secondary-color: #ffffff;
+  --secondary-color-300: #90a3bf;
+  --secondary-color-500: #1a202c;
 
-    --primary-color: #1A202C;
-    --primary-color-500: #3563E9;
-    --secondary-color: #FFFFFF;
-    --secondary-color-300: #90A3BF;
-    --secondary-color-500: #1A202C;
+  --main-bg-color: #f6f7f9;
 
+  --rental-car-left-bg-color: #54a6ff;
+  --rental-car-right-bg-color: #3563e9;
 }
 
 body {
-    font-family: var(--primary-font);
+  font-family: var(--primary-font);
 }
 
 form {
-    position: relative;
+  position: relative;
 }
 
 form img {
-    cursor: pointer;
-    top: 50%;
-    position: absolute;
-    transform: translateY(-50%);
+  cursor: pointer;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
 
-    &:first-of-type {
-        left: 20px;
-    }
+  &:first-of-type {
+    left: 20px;
+  }
 
-    &:last-of-type {
-        right: 20px;
-    }
+  &:last-of-type {
+    right: 20px;
+  }
 }
 
-
-
 form input {
-    width: 492px;
-    height: 44px;
-    border-radius: 70px;
-    border: 1px solid #C3D4E966;
-    padding-inline: 64px;
+  width: 492px;
+  height: 44px;
+  border-radius: 70px;
+  border: 1px solid #c3d4e966;
+  padding-inline: 64px;
 }
 
 .navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  border: 1px solid rgba(195, 212, 233, 40%);
+
+  & .logo-search-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 60px;
-    
-    & .logo-search-wrapper {
-        display: flex;
 
-        gap: 64px;
+    gap: 64px;
 
-        & .logo {
-            font-size: var(--primary-headings-size);
-        color: var(--primary-color-500);
-        font-weight: 700;
-        }
+    & .logo {
+      font-size: var(--primary-headings-size);
+      color: var(--primary-color-500);
+      font-weight: 700;
+    }
+  }
+
+  & .cta-wrapper {
+    display: flex;
+    gap: 20px;
+
+    & .notification-button {
+      position: relative;
+      &::after {
+        content: "";
+        width: 11px;
+        height: 11px;
+        background-color: #ff4423;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+      }
     }
 
-    & .cta-wrapper {
-        display: flex;
-        gap: 20px;
-
-        & .notification-button{
-            position: relative;
-            &::after {
-                content: '';
-                width: 11px;
-                height: 11px;
-                background-color: #FF4423;
-                border-radius: 50%;
-                position: absolute;
-                top: 2px;
-                right: 2px;
-
-            }
-        }
-
-
-        & a:not(:last-child){
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 48px;
-            height: 48px;
-            border: 1px solid #C3D4E966;
-            border-radius: 50%;
-
-
-        }
+    & a:not(:last-child) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid #c3d4e966;
+      border-radius: 50%;
     }
+  }
 }
 
 /* .settings-button:hover {
@@ -135,3 +136,59 @@ form input {
     }
 } */
 
+main {
+  background-color: var(--main-bg-color);
+  padding: 32px 64px 64px 64px;
+}
+
+section.rental-cards-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 320px;
+  gap: 32px;
+
+  & .rental-card {
+    position: relative;
+    color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 24px;
+
+    & .text-wrapper {
+      width: 284px;
+
+      & h2 {
+        font-size: 32px;
+      }
+      & p {
+        margin-top: 16px;
+      }
+    }
+    & button {
+      color: inherit;
+      border-radius: 4px;
+      font-weight: 600;
+      padding: 10px 20px;
+      margin-top: 20px;
+    }
+    & img {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 10px;
+    }
+  }
+
+  & .rental-card-left {
+    background-color: var(--rental-car-left-bg-color);
+    & button {
+      background-color: var(--rental-car-right-bg-color);
+    }
+  }
+
+  & .rental-card-right {
+    background-color: var(--rental-car-right-bg-color);
+    & button {
+      background-color: var(--rental-car-left-bg-color);
+    }
+  }
+}
